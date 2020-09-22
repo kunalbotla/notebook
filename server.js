@@ -12,7 +12,7 @@ app.use(express.json())
 // (don't forget to name your project on glitch first!)
 const MY_DOMAIN = 'lhs.kunalbotla.com'
 const START_PAGE =
-  'https://www.notion.so/kunalbotla/LHS-1a6e9661001d47549477abb047cc5607'
+  'http://www.notion.so/kunalbotla/LHS-1a6e9661001d47549477abb047cc5607'
 
 // code injected near the end of the <head> tag
 // styling and meta tags should go here
@@ -25,14 +25,14 @@ let INJECT_INTO_HEAD = `
   <meta name="twitter:site" content="@hackclub">
   <meta name="twitter:title" content="Kunal Notebook">
   <meta name="twitter:description" content="Kunal’s public Notion-powered Notebook, free to edit.">
-  <meta name="twitter:url" content="https://lhs.kunalbotla.com/">
-  <meta name="twitter:image" content="https://www.notion.so/images/meta/default.png">
+  <meta name="twitter:url" content="http://lhs.kunalbotla.com/">
+  <meta name="twitter:image" content="http://www.notion.so/images/meta/default.png">
   <meta property="og:site_name" content="Notion">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lhs.kunalbotla.com/">
+  <meta property="og:url" content="http://lhs.kunalbotla.com/">
   <meta property="og:title" content="Kunal Notebook">
   <meta property="og:description" content="Kunal’s public Notion-powered Notebook, free to edit.">
-  <meta property="og:image" content="https://www.notion.so/images/meta/default.png">
+  <meta property="og:image" content="http://www.notion.so/images/meta/default.png">
   <meta property="og:locale" content="en_US">
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 `
@@ -72,14 +72,14 @@ app.all('*', function (request, response) {
     }
     let url = request.url
     let res, body, contentType
-    console.log('fetch url: ' + `https://www.notion.so${url}`)
+    console.log('fetch url: ' + `http://www.notion.so${url}`)
     if (url.startsWith('/image')) {
-      response.redirect(301, `https://www.notion.so${url}`)
+      response.redirect(301, `http://www.notion.so${url}`)
     } else if (url.startsWith('/front')) {
-      response.redirect(301, `https://www.notion.so${url}`)
+      response.redirect(301, `http://www.notion.so${url}`)
     } else if (url.endsWith('js')) {
       response.type('application/x-javascript')
-      res = await fetch(`https://www.notion.so${url}`)
+      res = await fetch(`http://www.notion.so${url}`)
       body = await res.text()
       try {
         body = body
@@ -91,13 +91,13 @@ app.all('*', function (request, response) {
       }
     } else if (url.endsWith('css')) {
       response.type('text/css')
-      res = await fetch(`https://www.notion.so${url}`)
+      res = await fetch(`http://www.notion.so${url}`)
       body = await res.text()
     } else if (url.startsWith('/api')) {
       response.type('application/json;charset=UTF-8')
       response.append('Access-Control-Allow-Origin', '*')
       console.log('api method: ' + request.method)
-      res = await fetch(`https://www.notion.so${url}`, {
+      res = await fetch(`http://www.notion.so${url}`, {
         body: JSON.stringify(request.body),
         headers: {
           'Content-Type': 'application/json;charset=UTF-8',
@@ -109,12 +109,12 @@ app.all('*', function (request, response) {
       body = await res.text()
     } else if (url === `/`) {
       let pageUrlList = START_PAGE.split('/')
-      let redrictUrl = `https://${MY_DOMAIN}/${
+      let redrictUrl = `http://${MY_DOMAIN}/${
         pageUrlList[pageUrlList.length - 1]
       }`
       response.redirect(302, redrictUrl)
     } else {
-      res = await fetch(`https://www.notion.so${url}`, {
+      res = await fetch(`http://www.notion.so${url}`, {
         method: request.method // *GET, POST, PUT, DELETE, etc.
       })
       body = await res.text()
