@@ -10,28 +10,28 @@ app.use(express.json())
 
 // set this up with a public notion page link and glitch domain
 // (don't forget to name your project on glitch first!)
-const MY_DOMAIN = 'notebook.hackclub.com'
+const MY_DOMAIN = 'lhs.kunalbotla.com'
 const START_PAGE =
-  'https://www.notion.so/hackclub/Coming-Soon-bdd9d167a912466d80a356f138cfdecd'
+  'https://www.notion.so/kunalbotla/LHS-1a6e9661001d47549477abb047cc5607'
 
 // code injected near the end of the <head> tag
 // styling and meta tags should go here
 let INJECT_INTO_HEAD = `
-  <!-- stylesheet -->  
+  <!-- stylesheet -->
   <link rel="stylesheet" type="text/css" href="/style.css">
-  
+
   <!-- meta tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@hackclub">
-  <meta name="twitter:title" content="Hack Club Notebook">
-  <meta name="twitter:description" content="Hack Club’s public Notion-powered Notebook, free to edit.">
-  <meta name="twitter:url" content="https://notebook.hackclub.com/">
+  <meta name="twitter:title" content="Kunal Notebook">
+  <meta name="twitter:description" content="Kunal’s public Notion-powered Notebook, free to edit.">
+  <meta name="twitter:url" content="https://lhs.kunalbotla.com/">
   <meta name="twitter:image" content="https://www.notion.so/images/meta/default.png">
   <meta property="og:site_name" content="Notion">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://notebook.hackclub.com/">
-  <meta property="og:title" content="Hack Club Notebook">
-  <meta property="og:description" content="Hack Club’s public Notion-powered Notebook, free to edit.">
+  <meta property="og:url" content="https://lhs.kunalbotla.com/">
+  <meta property="og:title" content="Kunal Notebook">
+  <meta property="og:description" content="Kunal’s public Notion-powered Notebook, free to edit.">
   <meta property="og:image" content="https://www.notion.so/images/meta/default.png">
   <meta property="og:locale" content="en_US">
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">

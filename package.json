@@ -1,7 +1,7 @@
 {
-  "name": "@hackclub/notebook",
+  "name": "@kunalbotla/notebook",
   "version": "0.0.1",
-  "description": "Hack Club’s Notion-powered Notebook",
+  "description": "Kunal’s Notion-powered Notebook",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -11,7 +11,7 @@
     "node-fetch": "^2.6.1"
   },
   "repository": {
-    "url": "https://github.com/hackclub/notebook"
+    "url": "https://github.com/kunalbotla/notebook"
   },
   "license": "MIT"
 }
